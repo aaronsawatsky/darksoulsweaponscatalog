@@ -1,0 +1,272 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable = yes">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Dark Souls Weapons Directory</title>
+</head>
+<body>
+    
+    <div class="bg">
+        <div class="header">
+            <div class="menu-button">
+                <i class="fas fa-bars menu"></i>
+            </div>
+            <div class="search-bar">
+                <form class="weapon-form header-child-2">
+                    <input type="text" placeholder="Search for a weapon..." name="weapon" list="weapons" class="input">
+                    <datalist id="weapons"></datalist>
+                    <input class="submit" type="submit" value="Go">
+                </form>
+            </div>
+        </div>
+        <div class="content">
+            <table class="tg displaying"></table>
+        </div>
+        <div class="side-bar side-bar-displaying">
+            <div class="filters">
+                <div class="weapon-type-filter">
+                    <p class="filter-label">FILTERS</p>
+                    <select name="weapon-filter" id="type-filter">
+                        <option value="placeholder">Weapon Type</option>
+                        <option value="axe">Axes</option>
+                        <option value="bow">Bows</option>
+                        <option value="crossbow">Crossbows</option>
+                        <option value="curved-greatsword">Curved Greatswords</option>
+                        <option value="curved-sword">Curved Sword</option>
+                        <option value="dagger">Daggers</option>
+                        <option value="gauntlet">Fists</option>
+                        <option value="great-hammer">Great Hammers</option>
+                        <option value="greataxe">Greataxes</option>
+                        <option value="greatsword">Greatswords</option>
+                        <option value="halberd">Halberds</option>
+                        <option value="hammer">Hammers</option>
+                        <option value="katana">Katanas</option>
+                        <option value="spear">Spears</option>
+                        <option value="straight-sword">Straight Swords</option>
+                        <option value="thrusting-sword">Thrusting Swords</option>
+                        <option value="ultra-greatsword">Ultra Greatswords</option>
+                        <option value="whip">Whips</option>
+                    </select>
+                </div>
+                <div class="upgrade-path-filter">
+                    <select name="upgrade-path-filter" id="upgrade-filter">
+                        <option value="placeholder">Upgrade Path</option>
+                        <option value="Titanite">Titanite</option>
+                        <option value="Twinkling Titanite">Twinkling Titanite</option>
+                        <option value="Demon Titanite">Demon Titanite</option>
+                        <option value="Dragon Scale">Dragon Scales</option>
+                    </select>
+                </div>
+                <div class="boss-weapon-filter">
+                    <select name="boss-weapon-filter" id="boss-weapon">
+                        <option value="placeholder">Boss Soul Weapons</option>
+                        <option value="boss-weapons">All Boss Soul Weapons</option>
+                    </select>
+                </div>
+                <button class="reset-filter">RESET FILTERS</button>
+            </div>
+            <div class="upgrades">
+                <p class="upgrade-label">UPGRADES</p>
+                <select name="upgrade-options" id="upgrade-options" class="upgrade-options">
+                    <option value="placeholder">-- Select --</option>
+                    <option value="Titanite">Titanite (+0 to +15)</option>
+                    <option value="Twinkling-Titanite">Twinkling Titanite (+0 to +5)</option>
+                    <option value="Demon-Titanite">Demon Titanite (+0 to +5)</option>
+                    <option value="Dragon-Scale">Dragon Scale (+0 to +5)</option>
+                    <option value="">-- Weapon Ascensions --</option>
+                    <option value="Crystal">Crystal (+0 to +5)</option>
+                    <option value="Lightning">Lightning (+0 to +5)</option>
+                    <option value="Raw">Raw (+0 to +5)</option>
+                    <option value="Magic">Magic (+0 to +10)</option>
+                    <option value="Enchanted">Enchanted (+0 to +5)</option>
+                    <option value="Divine">Divine (+0 to +10)</option>
+                    <option value="Occult">Occult (+0 to +5)</option>
+                    <option value="Fire">Fire (+0 to +10)</option>
+                    <option value="Chaos">Chaos (+0 to +5)</option>
+                </select>
+                <div class="upgrade-block">
+                    <select name="regular-upgrade" id="regular-upgrade" class="regular-upgrade upgrade displaying">
+                        <option value="1">+0</option>
+                        <option value="1.1">+1</option>
+                        <option value="1.2">+2</option>
+                        <option value="1.3">+3</option>
+                        <option value="1.4">+4</option>
+                        <option value="1.5">+5</option>
+                        <option value="1.6">+6</option>
+                        <option value="1.7">+7</option>
+                        <option value="1.8">+8</option>
+                        <option value="1.9">+9</option>
+                        <option value="2.0">+10</option>
+                        <option value="2.1">+11</option>
+                        <option value="2.2">+12</option>
+                        <option value="2.3">+13</option>
+                        <option value="2.4">+14</option>
+                        <option value="2.5">+15</option>
+                    </select>
+                </div>
+                <div class="upgrade-block">
+                    <select name="twinkling-upgrade" id="twinkling-upgrade" class="twinkling-upgrade upgrade displaying">
+                        <option value="1">+0</option>
+                        <option value="1.1">+1</option>
+                        <option value="1.2">+2</option>
+                        <option value="1.3">+3</option>
+                        <option value="1.4">+4</option>
+                        <option value="1.5">+5</option>
+                    </select>
+                </div>
+                <div class="upgrade-block">
+                    <select name="demon-upgrade" id="demon-upgrade" class="demon-upgrade upgrade displaying">
+                        <option value="1">+0</option>
+                        <option value="1.1">+1</option>
+                        <option value="1.2">+2</option>
+                        <option value="1.3">+3</option>
+                        <option value="1.4">+4</option>
+                        <option value="1.5">+5</option>
+                    </select>
+                </div>
+                <div class="upgrade-block">
+                    <select name="dragon-scales" id="dragon-scales" class="dragon-scales upgrade displaying">
+                        <option value="1">+0</option>
+                        <option value="1.1">+1</option>
+                        <option value="1.2">+2</option>
+                        <option value="1.3">+3</option>
+                        <option value="1.4">+4</option>
+                        <option value="1.5">+5</option>
+                    </select>
+                </div>
+                <div class="upgrade-block">
+                <select name="crystal" id="crystal" class="crystal upgrade displaying">
+                    <option value="2.2">+0</option>
+                    <option value="2.3">+1</option>
+                    <option value="2.4">+2</option>
+                    <option value="2.5">+3</option>
+                    <option value="2.6">+4</option>
+                    <option value="2.7">+5</option>
+                </select>
+                </div>
+                <div class="upgrade-block">
+                <select name="lightning" id="lightning" class="lightning upgrade displaying">
+                    <option value="1.8">+0</option>
+                    <option value="1.94">+1</option>
+                    <option value="2.08">+2</option>
+                    <option value="2.22">+3</option>
+                    <option value="2.36">+4</option>
+                    <option value="2.5">+5</option>
+                </select>
+                </div>
+                <div class="upgrade-block">
+                <select name="raw" id="raw" class="raw upgrade displaying">
+                    <option value="1.5">+0</option>
+                    <option value="1.6">+1</option>
+                    <option value="1.7">+2</option>
+                    <option value="1.8">+3</option>
+                    <option value="1.9">+4</option>
+                    <option value="2.0">+5</option>
+                </select>
+                </div>
+                <div class="upgrade-block">
+                <select name="magic" id="magic" class="magic upgrade displaying">
+                    <option value="1.5">+0</option>
+                    <option value="1.6">+1</option>
+                    <option value="1.7">+2</option>
+                    <option value="1.8">+3</option>
+                    <option value="1.9">+4</option>
+                    <option value="2.0">+5</option>
+                    <option value="2.1">+6</option>
+                    <option value="2.2">+7</option>
+                    <option value="2.3">+8</option>
+                    <option value="2.4">+9</option>
+                    <option value="2.5">+10</option>
+                </select>
+                </div>
+                <div class="upgrade-block">
+                <select name="enchanted" id="enchanted" class="enchanted upgrade displaying">
+                    <option value="2.0">+0</option>
+                    <option value="2.08">+1</option>
+                    <option value="2.16">+2</option>
+                    <option value="2.24">+3</option>
+                    <option value="2.32">+4</option>
+                    <option value="2.4">+5</option>
+                </select>
+                </div>
+                <div class="upgrade-block">
+                <select name="divine" id="divine" class="divine upgrade displaying">
+                    <option value="1.5">+0</option>
+                    <option value="1.6">+1</option>
+                    <option value="1.7">+2</option>
+                    <option value="1.8">+3</option>
+                    <option value="1.9">+4</option>
+                    <option value="2.0">+5</option>
+                    <option value="2.1">+6</option>
+                    <option value="2.2">+7</option>
+                    <option value="2.3">+8</option>
+                    <option value="2.4">+9</option>
+                    <option value="2.5">+10</option>
+                </select>
+                </div>
+                <div class="upgrade-block">
+                <select name="occult" id="occult" class="occult upgrade displaying">
+                    <option value="2.0">+0</option>
+                    <option value="2.12">+1</option>
+                    <option value="2.24">+2</option>
+                    <option value="2.36">+3</option>
+                    <option value="2.48">+4</option>
+                    <option value="2.6">+5</option>
+                </select>
+                </div>
+                <div class="upgrade-block">
+                <select name="fire" id="fire" class="fire upgrade displaying">
+                    <option value="1.3">+0</option>
+                    <option value="1.4">+1</option>
+                    <option value="1.5">+2</option>
+                    <option value="1.6">+3</option>
+                    <option value="1.7">+4</option>
+                    <option value="1.8">+5</option>
+                    <option value="1.92">+6</option>
+                    <option value="2.04">+7</option>
+                    <option value="2.16">+8</option>
+                    <option value="2.28">+9</option>
+                    <option value="2.4">+10</option>
+                </select>
+                </div>
+                <div class="upgrade-block">
+                <select name="chaos" id="chaos" class="chaos upgrade displaying">
+                    <option value="1.8">+0</option>
+                    <option value="1.9">+1</option>
+                    <option value="2.0">+2</option>
+                    <option value="2.1">+3</option>
+                    <option value="2.2">+4</option>
+                    <option value="2.3">+5</option>
+                </select>
+                </div>
+                <!-- <button class="reset-upgrades">RESET UPGRADES</button> -->
+            </div>
+            <!-- <div class="ascensions">
+                <p class="ascension-label">WEAPON ASCENSIONS</p>
+                <p class="ascension-description">UPGRADE USING TITANITE</p>
+                <select name="ascensions" class="ascension-list">
+                    <option value="placeholder">-- Select --</option>
+                    <option value="crystal">Crystal +0 to +5</option>
+                    <option value="raw">Raw +0 to +5</option>
+                    <option value="lightning">Lightning +0 to +5</option>
+                    <option value="magic">Magic +0 to +10</option>
+                    <option value="enchanted">Enchanted +0 to +5</option>
+                    <option value="divine">Divine +0 to +10</option>
+                    <option value="fire">Fire +0 to +10</option>
+                    <option value="occult">Occult +0 to +5</option>
+                    <option value="chaos">Chaos +0 to +5</option>
+                </select>
+            </div> -->
+        </div>
+    </div>
+
+
+
+    <script src="weapons.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

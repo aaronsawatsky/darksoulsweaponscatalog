@@ -1,0 +1,431 @@
+@font-face {
+    font-family: OptimusPrinceps;
+    src: url(OptimusPrinceps.ttf);
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    min-height: 100%;
+    width: 100%;
+}
+
+.submit {
+    width: 100px;
+    height: 100%;
+    transition: 0.2s;
+}
+
+.submit:hover {
+    background-color: white;
+    color: black;
+}
+
+.bg {
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.7) 100%), url(https://images.hdqwalls.com/wallpapers/dark-souls-remastered-key-art-4k-p6.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+    position: relative;
+}
+
+.upgrade-num {
+    font-family: OptimusPrinceps;
+    color: white;
+    font-size: 50;
+    margin: 0 20px;
+    border: none;
+    width: 100px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+.header {
+    border: 1px solid white;
+    min-width: 100%;
+    height: 10%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar {
+    transform: translateY(20%);
+}
+
+form {
+    font-family: OptimusPrinceps;
+    font-size: 20px;
+    display: flex;
+}
+
+
+input {
+    width: 300px;
+    text-align: center;
+    font-family: inherit;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: 1px solid darkgrey;
+}
+
+input:focus {
+    outline: none;
+}
+
+p {
+    letter-spacing: 10px;
+    color: white;
+    font-family: OptimusPrinceps;
+}
+
+.filters {
+    display: block;
+    text-align: center;
+    font-family: OptimusPrinceps;
+    font-size: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* border: 1px solid white; */
+}
+
+
+.weapon-type-filter {
+    margin: 10px;
+}
+
+.upgrade-path-filter {
+    margin: 10px;
+}
+
+.boss-weapon-filter {
+    margin: 10px;
+}
+
+.reset-filter{
+    transition: 0.2s;
+    width: 150px;
+    background-color: rgba(0,0,0,0.0);
+    color: white;
+    border: 1px solid white;
+}
+
+.displaying {
+    display: none;
+}
+
+.tg  {
+    border-collapse:collapse;
+    border-spacing: 0;
+    color: white;
+    margin: 0 auto;
+}
+
+.tg td {
+    border-color:white;
+    border-style:solid;
+    border-width:1px;
+    font-family: OptimusPrinceps;
+    font-size:20px;
+    overflow:hidden;
+    padding:10px 5px;
+    word-break:normal;
+}
+.tg th {
+    border-color:white;
+    border-style:solid;
+    border-width:1px;
+    font-family: OptimusPrinceps;
+    font-size:14px;
+    font-weight:normal;
+    overflow:hidden;
+    padding:10px 5px;
+    word-break:normal;
+}
+.tg .tg-baqh {
+    text-align:center;
+    vertical-align:top
+}
+.tg .tg-c3ow {
+    border-color:white;
+    text-align:center;
+    vertical-align:top
+}
+.tg .tg-0pky {
+    border-color: white;
+    text-align:center;
+    vertical-align:top
+}
+.tg .tg-0lax {
+    text-align:center;
+    vertical-align:top
+}
+
+@media (max-width: 600px) {
+    .tg td {
+        font-size: 10px;
+    }
+    .input {
+        width: 200px;
+        font-size: 15px;
+        height: 30px;
+    }
+    .submit {
+        font-size: 10px;
+        height: 30px;
+        width: 30px;
+    }
+    .side-bar {
+        overflow: scroll;
+    }
+}
+
+@media (max-height: 500px) {
+    .content {
+        overflow: scroll;
+        padding-top: 300px;
+    }
+}
+
+.upgrade-paths {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+select {
+    color: white;
+    width: 200px;
+    height: 30px;
+    border-color: white;
+    font-family: OptimusPrinceps;
+    background-color: rgba(0,0,0,0.0);
+    text-align-last: center;
+    margin: 0 auto; 
+    transition: 0.2s;
+}
+
+select:focus {
+    outline: none;
+}
+
+select:hover {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+
+option {
+    color: black;
+    font-family: OptimusPrinceps;
+}
+
+
+.reset-upgrades:hover, .reset-filter:hover {
+    background-color: crimson;
+    color: white;
+    border: 1px solid crimson;
+}
+
+.reset-upgrades:focus, .reset-filter:focus {
+    outline: none;
+}
+
+.side-bar {
+    height: 90%;
+    border: 1px solid white;
+    width: 20%;
+    float: left;
+    transition: 0.2s;
+}
+
+.menu {
+    color: white;
+}
+
+.menu-button {
+    display: none;
+    top: 0;
+    left: 0;
+}
+
+
+.content {
+    border: 1px solid white;
+    width: 80%;
+    float: right;
+    height: 90%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+@media (max-width: 1100px) {
+    .side-bar {
+        z-index: 99;
+        width: 100%;
+        background-color: #3b3838;
+        position: absolute;
+        transition: 0.3s;
+        overflow: scroll;
+    }
+
+    .side-bar-displaying {
+        width: 0px;
+    }
+
+    .displaying {
+        display: none;
+    }
+
+
+    .side-bar input {
+        background-color: rgba(0,0,0,0.0);
+    }
+    .content {
+        width: 100%;
+    }
+    .menu-button {
+        display: flex;
+        margin: 20px;
+        font-size: 20px;
+    }
+    .search-bar {
+        margin: 0px 20px;
+    }
+}
+
+.upgrades {
+    text-align: center;
+    color: white;
+    font-family: OptimusPrinceps;
+    /* border: 1px solid white; */
+}
+
+
+label {
+    float: left;
+}
+
+.sub {
+    font-size: 10px;
+}
+
+.upgrade-block {
+    margin-top: -15px;
+}
+
+.upgrade-options {
+    margin-bottom: 20px;
+}
+
+.regular-upgrade {
+    height: 30px;
+    margin: 10px;
+    font-family: OptimusPrinceps;
+    border: 1px solid white;
+    color: white;
+}
+
+.twinkling-upgrade {
+    height: 30px;
+    margin: 10px;
+    font-family: OptimusPrinceps;
+    border: 1px solid white;
+    color: white;
+}
+
+.demon-upgrade {
+    height: 30px;
+    margin: 10px;
+    font-family: OptimusPrinceps;
+    border: 1px solid white;
+    color: white;
+}
+
+.dragon-scales {
+    width: 100px;
+    height: 30px;
+    margin: 10px;
+    font-family: OptimusPrinceps;
+    border: 1px solid white;
+    color: white;
+}
+
+i {
+    color: white;
+}
+
+.plus-minus {
+    border: none;
+    background-color: rgba(0,0,0,0.0);
+}
+
+.plus-minus:focus {
+    outline: none;
+}
+
+i:hover {
+    cursor: pointer;
+}
+
+.reset-upgrades {
+    transition: 0.2s;
+    width: 150px;
+    background-color: rgba(0,0,0,0.0);
+    color: white;
+    border: 1px solid white;
+    font-family: OptimusPrinceps;
+    margin: 20px;
+}
+
+.ascensions {
+    text-align: center;
+    font-family: OptimusPrinceps;
+    
+}
+
+.filter-label {
+    margin-top: -10px;
+    font-size: 13px;
+    font-weight: 1000;
+}
+
+.upgrade-label {
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: 1000;
+}
+
+.ascension-label {
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: 1000;
+}
+
+.ascension-description {
+    letter-spacing: 3px;
+    font-size: 12px;
+}
+
+.upgraded{
+    color: lightseagreen;
+}
+
+.upgrade {
+    margin: 10px;
+}
